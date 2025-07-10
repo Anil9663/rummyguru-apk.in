@@ -491,33 +491,34 @@
 
 
      <!-- JAVASCRIPT SECTION START / JavaScript भाग शुरू -->
-    <script>
-        const textElement = document.getElementById('disclaimerText');
-        const container = document.querySelector('.scrolling-part');
-        
-       
-        // Adjust animation duration based on text width
-        const textWidth = textElement.scrollWidth / 2;
-        const containerWidth = container.offsetWidth;
-        const speed = containerWidth / 45; // Adjust speed factor (10 seconds to cross container)
-        const duration = (textWidth + containerWidth) / speed;
-        
+   <script>
+    const textElement = document.getElementById('disclaimerText');
+    const container = document.querySelector('.scrolling-part');
+    
+    // सभी READ ऑपरेशन्स पहले एक साथ
+    const textWidth = textElement.scrollWidth / 2;
+    const containerWidth = container.offsetWidth;
+    const speed = containerWidth / 45;
+    const duration = (textWidth + containerWidth) / speed;
+    
+    // WRITE ऑपरेशन्स requestAnimationFrame में
+    requestAnimationFrame(() => {
         textElement.style.animationDuration = duration + 's';
-        
-        // Pause on click/touch
-        textElement.addEventListener('click', function() {
-            this.style.animationPlayState = this.style.animationPlayState === 'paused' ? 'running' : 'paused';
-        });
-        
-        // Mobile touch support
-        textElement.addEventListener('touchstart', function() {
-            this.style.animationPlayState = 'paused';
-        });
-        
-        textElement.addEventListener('touchend', function() {
-            this.style.animationPlayState = 'running';
-        });
-    </script>
+    });
+    
+    // इवेंट हैंडलर्स (इनमें कोई Reflow समस्या नहीं)
+    textElement.addEventListener('click', function() {
+        this.style.animationPlayState = this.style.animationPlayState === 'paused' ? 'running' : 'paused';
+    });
+    
+    textElement.addEventListener('touchstart', function() {
+        this.style.animationPlayState = 'paused';
+    });
+    
+    textElement.addEventListener('touchend', function() {
+        this.style.animationPlayState = 'running';
+    });
+</script>
     <!-- JAVASCRIPT SECTION END / JavaScript भाग समाप्त -->
 
 
@@ -647,60 +648,68 @@
             ]
         };
 
-        // Function to render games
-        function renderGames() {
-            for (const category in gamesData) {
-                const gameList = document.querySelector(`#${category} .game-list`);
-                gameList.innerHTML = '';
+       // गेम्स रेंडरिंग फंक्शन (Forced Reflow फिक्स्ड)
+function renderGames() {
+    // पहले से elements को कैश करें
+    const gameContainers = {};
+    
+    for (const category in gamesData) {
+        gameContainers[category] = document.querySelector(`#${category} .game-list`);
+        const fragment = document.createDocumentFragment(); // अस्थायी मेमोरी में बनाएं
+        
+        gamesData[category].forEach(game => {
+            const gameItem = document.createElement('li');
+            gameItem.className = 'game-item';
+            gameItem.innerHTML = `
+                <div class="game-info">
+                    <div class="game-logo">
+                        <img src="${game.logoImage}" alt="${game.name}" onerror="this.src='images/default-game-logo.webp'">
+                    </div>
+                    <div class="game-details">
+                        <div class="game-name">${game.name}</div>
+                        <div class="game-bonus">${game.bonus}</div>
+                        <div class="game-withdraw">${game.withdraw}</div>
+                    </div>
+                </div>
+                <a class="game-download-btn" href="${game.downloadLink}" target="_blank">
+                    <svg class="download-icon">
+                        <use xlink:href="#download-icon"></use>
+                    </svg>
+                    Download
+                </a>
+            `;
+            fragment.appendChild(gameItem);
+        });
+        
+        // सिर्फ 1 बार DOM अपडेट
+        gameContainers[category].innerHTML = '';
+        gameContainers[category].appendChild(fragment);
+    }
+}
+
+// पेज लोड इनिशियलाइज़ेशन (Forced Reflow फिक्स्ड)
+document.addEventListener('DOMContentLoaded', function() {
+    // पहले से elements को कैश करें
+    const allTabs = document.querySelectorAll('.game-tab');
+    const allSections = document.querySelectorAll('.game-section');
+    
+    renderGames();
+    
+    // टैब स्विचिंग (बेहतर परफॉरमेंस के साथ)
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            requestAnimationFrame(() => {
+                // एक साथ सभी क्लास अपडेट
+                allTabs.forEach(t => t.classList.remove('active'));
+                allSections.forEach(s => s.classList.remove('active'));
                 
-                gamesData[category].forEach(game => {
-                    const gameItem = document.createElement('li');
-                    gameItem.className = 'game-item';
-                    
-                   gameItem.innerHTML = `
-    <div class="game-info">
-        <div class="game-logo">
-            <img src="${game.logoImage}" alt="${game.name}" onerror="this.src='images/default-game-logo.webp'">
-        </div>
-        <div class="game-details">
-            <div class="game-name">${game.name}</div>
-            <div class="game-bonus">${game.bonus}</div>
-            <div class="game-withdraw">${game.withdraw}</div>
-        </div>
-    </div>
-    <a class="game-download-btn" href="${game.downloadLink}" target="_blank">
-        <svg class="download-icon">
-            <use xlink:href="#download-icon"></use>
-        </svg>
-        Download
-    </a>
-`;
-
-                    
-                    gameList.appendChild(gameItem);
-                });
-            }
-        }
-
-        // Initialize the games section when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            renderGames();
-            
-            // Tab switching functionality
-            const tabs = document.querySelectorAll('.game-tab');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Remove active class from all tabs and sections
-                    document.querySelectorAll('.game-tab').forEach(t => t.classList.remove('active'));
-                    document.querySelectorAll('.game-section').forEach(s => s.classList.remove('active'));
-                    
-                    // Add active class to clicked tab and corresponding section
-                    const tabId = this.getAttribute('data-tab');
-                    this.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
-                });
+                const tabId = this.getAttribute('data-tab');
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
             });
         });
+    });
+});
     </script>
 </body>
 </html>
