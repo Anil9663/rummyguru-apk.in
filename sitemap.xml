@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- मुख्य पेज -->
+    <url>
+        <loc>https://rummyguru-apk.in/</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        
+        <!-- सभी इमेजेस -->
+        <!-- .ico files first -->
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/favicons/favicon.ico</image:loc>
+            <image:title>Website Favicon</image:title>
+        </image:image>
+        
+        <!-- .svg files next -->
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/favicons/favicon.svg</image:loc>
+            <image:title>SVG Favicon</image:title>
+        </image:image>
+        
+        <!-- .png files next -->
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/favicons/apple-touch-icon.png</image:loc>
+            <image:title>Apple Touch Icon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/favicons/favicon-32x32.png</image:loc>
+            <image:title>Favicon 32x32</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/favicons/favicon-96x96.png</image:loc>
+            <image:title>Favicon 96x96</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/favicons/web-app-manifest-192x192.png</image:loc>
+            <image:title>PWA Icon 192x192</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/favicons/web-app-manifest-512x512.png</image:loc>
+            <image:title>PWA Icon 512x512</image:title>
+        </image:image>
+                
+        <!-- .webp files last -->
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/abc-rummy-apk-logo.webp</image:loc>
+            <image:title>ABC Rummy APK Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/jaiho-rummy-apk-logo.webp</image:loc>
+            <image:title>ABC Rummy APK Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/bappa-rummy-logo.webp</image:loc>
+            <image:title>Bappa Rummy Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/gogo-rummy-apk-logo.webp</image:loc>
+            <image:title>GoGo Rummy APK Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/jaiho-arcade-apk-logo.webp</image:loc>
+            <image:title>JaiHo Arcade Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/neta-vip-apk-logo.webp</image:loc>
+            <image:title>Neta VIP APK Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/rummy-guru-apk-logo.webp</image:loc>
+            <image:title>Rummy Guru Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/rummy-se-apk-logo.webp</image:loc>
+            <image:title>Rummy SE Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/spin-crush-apk-logo.webp</image:loc>
+            <image:title>Spin Crush Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/teen-patti-clan-apk-logo.webp</image:loc>
+            <image:title>Teen Patti Clan WEBP Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/rummy-guru-apk.webp</image:loc>
+            <image:title>Rummy Guru APK</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/rummy-guru-download-btn.webp</image:loc>
+            <image:title>Download Button</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/rummy-guru.webp</image:loc>
+            <image:title>Rummy Guru Banner</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/teen-patti-rush-apk-logo.webp</image:loc>
+            <image:title>Teen Patti Rush Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/teen-patti-gold-apk-logo.webp</image:loc>
+            <image:title>Teen Patti Gold Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/teen-patti-jodi-apk-logo.webp</image:loc>
+            <image:title>Teen Patti Jodi Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/teen-patti-master-apk-logo.webp</image:loc>
+            <image:title>Teen Patti Master Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/yono-101z-apk-logo.webp</image:loc>
+            <image:title>Yono 101Z Logo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://rummyguru-apk.in/images/yono-777-apk-logo.webp</image:loc>
+            <image:title>Yono 777 Logo</image:title>
+        </image:image>
+    </url>
+
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://rummyguru-apk.in/privacy-policy.html</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Terms & Conditions -->
+    <url>
+        <loc>https://rummyguru-apk.in/terms-and-conditions.html</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- About Us -->
+    <url>
+        <loc>https://rummyguru-apk.in/about-us.html</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Contact Us -->
+    <url>
+        <loc>https://rummyguru-apk.in/contact-us.html</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- FAQ -->
+    <url>
+        <loc>https://rummyguru-apk.in/faq.html</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Data Deletion Policy -->
+    <url>
+        <loc>https://rummyguru-apk.in/data-deletion-policy.html</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Disclaimer -->
+    <url>
+        <loc>https://rummyguru-apk.in/disclaimer.html</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>
